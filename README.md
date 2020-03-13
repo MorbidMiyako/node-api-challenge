@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+      The handling of requests and responses and using route handlers.
+
 - [ ] Describe Middleware?
+
+      Middleware are functions that after execution pass the function on to the next part.
 
 - [ ] Describe a Resource?
 
+      In other words a database.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+      A res.status(#) with a complementary message.
+
 - [ ] How can we partition our application into sub-applications?
+
+      By requiring (importing) other files which allow us to split up one big file into sub files.
 
 ## Minimum Viable Product
 
