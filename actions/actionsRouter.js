@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
       res.status(200).json(projects)
     })
     .catch(err => {
-      res.status(500).json(err)
+      res.status(500).json({ message: "something went wrong getting your actions", err })
     })
 })
 
@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
       res.status(200).json(projects)
     })
     .catch(err => {
-      res.status(500).json(err)
+      res.status(500).json({ message: "something went wrong adding your action", err })
     })
 })
 
@@ -32,6 +32,9 @@ router.get("/:id/", (req, res) => {
     .then(project => {
       res.status(200).json(project)
     })
+    .catch(err => {
+      res.status(500).json({ message: "something went wrong getting your action", err })
+    })
 })
 
 router.put("/:id", (req, res) => {
@@ -39,12 +42,18 @@ router.put("/:id", (req, res) => {
     .then(project => {
       res.status(200).json(project)
     })
+    .catch(err => {
+      res.status(500).json({ message: "something went wrong updating your action", err })
+    })
 })
 
 router.delete("/:id", (req, res) => {
   actionsDB.remove(req.params.id, req.body)
     .then(project => {
       res.status(200).json(project)
+    })
+    .catch(err => {
+      res.status(500).json({ message: "something went wrong deleting your action", err })
     })
 })
 
