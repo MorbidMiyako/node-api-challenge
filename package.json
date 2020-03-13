@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
+    "start": "node index.js",
     "db:seed": "knex seed:run"
   },
   "repository": {
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/LambdaSchool/node-api-challenge#readme",
   "dependencies": {
     "helmet": "^3.21.2",
+    "express": "^4.17.1",
     "knex": "^0.20.9",
     "sqlite3": "^4.1.1"
   },
