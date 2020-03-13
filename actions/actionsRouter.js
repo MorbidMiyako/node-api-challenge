@@ -30,10 +30,12 @@ router.post("/", (req, res) => {
 router.get("/:id/", (req, res) => {
   actionsDB.get(req.params.id)
     .then(project => {
-      res.status(200).json(project)
+      project.id ?
+        res.status(200).json(project)
+        : res.status(404).json({ message: "there was no action with this id found" })
     })
     .catch(err => {
-      res.status(500).json({ message: "something went wrong getting your action", err })
+      res.status(404).json({ message: "there was no action with this id found" })
     })
 })
 
